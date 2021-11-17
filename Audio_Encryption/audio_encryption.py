@@ -8,12 +8,6 @@ def encrypt(original_audio_file_path ,encrypted_file_path , key):
 
     fernet=Fernet(key)
 
-    with open('key.key','wb') as filekey:
-        filekey.write(key)
-
-    with open('key.key','rb') as filekey:
-        key=filekey.read()
-
     with open(original_audio_file_path,'rb') as file: #location of voice file to be encrypted
         originalaudio=file.read()
 
@@ -45,6 +39,15 @@ key=Fernet.generate_key()
 encrypt('/home/rohit/Desktop/data/test.wav', '/home/rohit/Desktop/data/encrypted.wav', key)
 
 decrypt('/home/rohit/Desktop/data/encrypted.wav', '/home/rohit/Desktop/data/decrypted.wav', key)
+
+
+'''
+    with open('key.key','wb') as filekey:
+        filekey.write(key)
+
+    with open('key.key','rb') as filekey:
+        key=filekey.read()
+'''
 
 
 '''
