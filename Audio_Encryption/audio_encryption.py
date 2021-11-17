@@ -65,10 +65,10 @@ with sr.Microphone(device_index=0) as m:
 	eng.say("listening")
 	audio=r.listen(m,timeout=5)
 	print("timedout")
-	'''
+	
 print('speak out2')
 audio2=r.listen(source,timeout=0.5)
-print("timedout")'''
+print("timedout")
 try:
 	print("text :"+r.recognize_sphinx(audio))
 	#print("text :"+r.recognize_google(audio2s,language='en-IN'))
